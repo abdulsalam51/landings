@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 55px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo span {
+            color: orangered;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: orangered;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: calc(100vh - 55px);
+            background: linear-gradient(
+                110deg,
+                #ff7438,
+                #f04475
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 50px 8%;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* LEFT CONTENT */
+
+        .hero-content {
+            color: white;
+            max-width: 450px;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .discover {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .discover:hover {
+            background: white;
+            color: #f04475;
+        }
+
+        /* FORM */
+
+        .form-box {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .form-box input,
+        .form-box select {
+            width: 100%;
+            height: 42px;
+            margin-bottom: 12px;
+            padding: 0 12px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 12px;
+            background: white;
+        }
+
+        .form-box input:focus,
+        .form-box select:focus {
+            border-color: #ff7438;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .terms input {
+            width: 13px;
+            height: 13px;
+            margin: 0;
+        }
+
+        .terms a {
+            color: #f04475;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 42px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(
+                90deg,
+                #ff7438,
+                #f04475
+            );
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* BACKGROUND DECORATION */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(
+                to top,
+                rgba(80, 20, 50, 0.12),
+                transparent
+            );
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 8px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 70px 20px;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 12px;
+            }
+
+            .form-box {
+                width: 100%;
+                max-width: 400px;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .nav-links {
+                gap: 7px;
+            }
+
+            .nav-links a {
+                font-size: 7px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            <span>◆</span> Salam
+        </div>
+
+        <div class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#">SERVICES</a>
+            <a href="#">DETAILS</a>
+            <a href="#">PRICING</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">DROP</a>
+            <a href="#">CONTACT</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-content">
+
+            <h1>
+                FRONTEND DEVELOPMENT<br>
+                HTML & CSS
+            </h1>
+
+            <p>
+                I’m passionate about frontend web development, with a focus on building clean,
+                responsive, and user-friendly websites using HTML and CSS. I’m continuously learning, 
+                improving my coding skills, and exploring new technologies.
+            </p>
+
+            <a href="#" class="discover">
+                DISCOVER
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT FORM -->
+
+        <div class="form-box">
+
+            <form>
+
+                <input type="text"
+                placeholder="Name" required>
+
+                <input type="email"
+                placeholder="Email" required>
+
+                <input type="tel"
+                placeholder="Phone">
+
+                <select required>
+
+                    <option value="">Select Package</option>
+
+                    <option>Basic Package</option>
+
+                    <option>Standard Package</option>
+
+                    <option>Premium Package</option>
+
+                </select>
+
+                <label class="terms">
+
+                    <input type="checkbox" required>
+
+                    <span>
+                        Agree and continue with
+                        <a href="#">Privacy Policy</a>
+                        and
+                        <a href="#">Terms & Conditions</a>
+                    </span>
+
+                </label>
+
+                <button type="submit" class="submit-btn">
+                    GET QUOTE
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
